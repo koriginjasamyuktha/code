@@ -1,0 +1,852 @@
+<ngx-spinner></ngx-spinner>
+<ngb-accordion [closeOthers]="true" activeIds="instructions1">
+	<ngb-panel id="instructions1" title="New Patient Data/Order">
+		<ng-template ngbPanelContent>
+			<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
+				<div>
+					<nav class="page-breadcrumb mb-0">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a routerLink="">Patients</a></li>
+							<li class="breadcrumb-item active" aria-current="page">New Order</li>
+						</ol>
+					</nav>
+				</div>
+				<div class="d-flex align-items-center flex-wrap text-nowrap">
+					<button type="button" class="btn btn-outline-secondary mr-2">clear</button>
+					<button type="button" class="btn btn-primary" (click)="submitForm()">Submit</button>
+				</div>
+			</div>
+			<form [formGroup]="SubmitForm">
+				<div class="row">
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-5">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title border-bottom text-primary">Identifier/Location Information</h6>
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label class="control-label">Identifier</label>
+											<input formControlName="identifier" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label class="control-label">System</label>
+											<input formControlName="system" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<label class="control-label">NCPDP</label>
+											<input formControlName="NCPDP" type="text" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="card-title border-bottom"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title border-bottom text-primary">Basic Information</h6>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="control-label">ID</label>
+											<input formControlName="id" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="control-label">Prefix</label>
+											<input formControlName="prefix" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="control-label">suffix</label>
+											<input formControlName="suffix" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="control-label">First Name</label>
+											<input formControlName="first_name" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="control-label">Middle Name</label>
+											<input formControlName="middle_name" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="control-label">Last Name</label>
+											<input formControlName="last_name" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="control-label">Date of birth</label>
+											<input formControlName="dob" type="text" class="form-control">
+										</div>
+									</div>
+
+								</div>
+								<div class="card-title border-bottom"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1">&nbsp;</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-10">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title border-bottom text-primary"> Contact Information</h6>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">System</label>
+											<input formControlName="home_system" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">Use</label>
+											<input formControlName="home_use" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">Value</label>
+											<input formControlName="home_number" type="text" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="card-title border-bottom"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1">&nbsp;</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-10">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title border-bottom text-primary"> Address Information</h6>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="control-label">Address Line 1</label>
+											<input formControlName="line_1" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="control-label">Address Line 2</label>
+											<input formControlName="line_2" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">City</label>
+											<input formControlName="city" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">State</label>
+											<input formControlName="state" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">Postal Code</label>
+											<input formControlName="postalCode" type="number" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="card-title border-bottom"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1">&nbsp;</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-10">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title border-bottom text-primary">Pharmacist Information</h6>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">First Name</label>
+											<input formControlName="pharmacist_first_name" type="text"
+												class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">Middle Name</label>
+											<input formControlName="pharmacist_middle_name" type="text"
+												class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">Last Name</label>
+											<input formControlName="pharmacist_last_name" type="text"
+												class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">Pharmacist suffix</label>
+											<input formControlName="pharmacist_suffix" type="text" class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">Pharmacist Prefix</label>
+											<input formControlName="pharmacist_prefix" type="text" class="form-control">
+										</div>
+									</div>
+
+								</div>
+								<div class="card-title border-bottom"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-1">&nbsp;</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col-md-1">&nbsp;</div>
+					<div class="col-md-10">
+						<div class="card">
+							<div class="card-body">
+								<h6 class="card-title border-bottom text-primary">Medication Order</h6>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">manifestId</label>
+											<input formControlName="medication_dispense_manifestId" type="text"
+												class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">totalSyncedRX</label>
+											<input formControlName="medication_dispense_totalSyncedRX" type="text"
+												class="form-control">
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group">
+											<label class="control-label">dateNeedBy</label>
+											<input formControlName="medication_dispense_dateNeedBy" type="text"
+												class="form-control">
+										</div>
+									</div>
+									<!-- 
+									 -->
+								</div>
+
+								<div>
+									<div class="card">
+										<div class="card-body">
+											<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin border-bottom">
+											<h6 class="card-title border-bottom text-primary">LINES</h6>
+											<button type="button" class="btn btn-primary btn-icon btn-xs"
+																		(click)="addOtherItemInLine()"><i
+																			class="feather icon-plus"></i></button>
+																			</div>
+											<div style="border:rgb(216 22 22) 1px solid;">
+												<div class="card">
+													<div class="card-body">
+														<div class="row">
+
+															<div class="col-sm-4">
+																<div class="form-group">
+																	<label
+																		class="control-label">authorizingPrescription</label>
+																	<input
+																		formControlName="medication_dispense_authorizingPrescription"
+																		type="text" class="form-control">
+																</div>
+															</div>
+															<div class="col-sm-4">
+																<div class="form-group">
+																	<label class="control-label">Validity Period
+																		end</label>
+																	<input formControlName="validityPeriodEnd"
+																		type="text" class="form-control">
+																</div>
+															</div>
+															<div class="col-sm-4">
+																<div class="form-group">
+																	<label class="control-label">authorOn</label>
+																	<input formControlName="authorOn" type="text"
+																		class="form-control">
+																</div>
+															</div>
+
+
+														</div>
+														<div class="row">
+															<div class="col-md-6">
+																<div class="card">
+																	<div class="card-body">
+																		<h6
+																			class="card-title border-bottom text-primary">
+																			Requestor Basic
+																			Information</h6>
+																		<div class="row">
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label
+																						class="control-label">Prefix</label>
+																					<input
+																						formControlName="requestor_prefix"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label
+																						class="control-label">suffix</label>
+																					<input
+																						formControlName="requestor_suffix"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label class="control-label">First
+																						Name</label>
+																					<input
+																						formControlName="requestor_first_name"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label class="control-label">Middle
+																						Name</label>
+																					<input
+																						formControlName="requestor_middle_name"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label class="control-label">Last
+																						Name</label>
+																					<input
+																						formControlName="requestor_last_name"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label class="control-label">Date of
+																						birth</label>
+																					<input
+																						formControlName="requestor_dob"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																		</div>
+																		<div class="card-title border-bottom"></div>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-6">
+																<div class="card">
+																	<div class="card-body">
+																		<h6
+																			class="card-title border-bottom text-primary">
+																			Requestor Address
+																			Information</h6>
+																		<div class="row">
+																			<div class="col-sm-12">
+																				<div class="form-group">
+																					<label class="control-label">Address
+																						Line 1</label>
+																					<input
+																						formControlName="requestor_line_1"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																			<div class="col-sm-12">
+																				<div class="form-group">
+																					<label class="control-label">Address
+																						Line 2</label>
+																					<input
+																						formControlName="requestor_line_2"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label
+																						class="control-label">City</label>
+																					<input
+																						formControlName="requestor_city"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label
+																						class="control-label">State</label>
+																					<input
+																						formControlName="requestor_state"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label class="control-label">Postal
+																						Code</label>
+																					<input
+																						formControlName="requestor_postalCode"
+																						type="number"
+																						class="form-control">
+																				</div>
+																			</div>
+																		</div>
+																		<div class="card-title border-bottom"></div>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-6 mt-2">
+																<div class="card">
+																	<div class="card-body">
+																		<h6
+																			class="card-title border-bottom text-primary">
+																			Requestor Contact
+																			Information
+																		</h6>
+																		<div class="row">
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label
+																						class="control-label">System</label>
+																					<input
+																						formControlName="requestor_home_system"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label
+																						class="control-label">Use</label>
+																					<input
+																						formControlName="requestor_home_use"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																			<div class="col-sm-4">
+																				<div class="form-group">
+																					<label
+																						class="control-label">Value</label>
+																					<input
+																						formControlName="requestor_home_number"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+
+																		</div>
+																		<div class="card-title border-bottom"></div>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-6 mt-2">
+																<div class="card">
+																	<div class="card-body">
+																		<h6
+																			class="card-title border-bottom text-primary">
+																			medication Codeable
+																			Concept
+																		</h6>
+																		<div class="row">
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label
+																						class="control-label">System</label>
+																					<input
+																						formControlName="requestor_medication_system"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																			<div class="col-sm-6">
+																				<div class="form-group">
+																					<label
+																						class="control-label">Code</label>
+																					<input
+																						formControlName="requestor_medication_code"
+																						type="text"
+																						class="form-control">
+																				</div>
+																			</div>
+																		</div>
+																		<div class="card-title border-bottom"></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+
+
+														<div class="card">
+															<div class="card-body">
+																<h6 class="card-title border-bottom text-primary">
+																	Medication Dispense Information</h6>
+																<div class="row">
+
+																	<div class="col-sm-4">
+																		<div class="form-group">
+																			<label
+																				class="control-label">originalFillDate</label>
+																			<input
+																				formControlName="medication_dispense_originalFillDate"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+
+																	<div class="col-sm-4">
+																		<div class="form-group">
+																			<label
+																				class="control-label">dispenseStartDate</label>
+																			<input
+																				formControlName="medication_dispense_dispenseStartDate"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="col-sm-4">
+																		<div class="form-group">
+																			<label
+																				class="control-label">dispenseRefillNumber</label>
+																			<input
+																				formControlName="medication_dispense_dispenseRefillNumber"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="col-sm-4">
+																		<div class="form-group">
+																			<label
+																				class="control-label">refillsRemaining</label>
+																			<input
+																				formControlName="medication_dispense_refillsRemaining"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="col-sm-4">
+																		<div class="form-group">
+																			<label
+																				class="control-label">refillMessage</label>
+																			<input
+																				formControlName="medication_dispense_refillMessage"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="col-sm-4">
+																		<div class="form-group">
+																			<label
+																				class="control-label">orderType</label>
+																			<input
+																				formControlName="medication_dispense_orderType"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+
+																	<div class="col-sm-4">
+																		<div class="form-group">
+																			<label
+																				class="control-label">RXSyncSeq</label>
+																			<input
+																				formControlName="medication_dispense_RXSyncSeq"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+
+																	<div class="col-sm-3">
+																		<div class="form-group">
+																			<label class="control-label">Days
+																				Supply</label>
+																			<input
+																				formControlName="medication_dispense_daysSupply"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="col-sm-3">
+																		<div class="form-group">
+																			<label
+																				class="control-label">Quantity</label>
+																			<input
+																				formControlName="medication_dispense_quantity"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+
+																	<div class="col-sm-3">
+																		<div class="form-group">
+																			<label
+																				class="control-label">substitution</label>
+																			<input
+																				formControlName="medication_dispense_substitution"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="col-sm-3">
+																		<div class="form-group">
+																			<label class="control-label">sig</label>
+																			<input
+																				formControlName="medication_dispense_sig"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="col-sm-3">
+																		<div class="form-group">
+																			<label class="control-label">warning</label>
+																			<input
+																				formControlName="medication_dispense_warning"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+																	<div class="col-sm-3">
+																		<div class="form-group">
+																			<label
+																				class="control-label">DispenseLineID</label>
+																			<input
+																				formControlName="medication_dispense_dispenseLineid"
+																				type="text" class="form-control">
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-12 mt-2">
+																		<div class="card">
+																			<div class="card-body">
+																				<h6
+																					class="card-title border-bottom text-primary">
+																					medication Codeable
+																					Concept
+																				</h6>
+																				<div class="row">
+																					<div class="col-sm-6">
+																						<div class="form-group">
+																							<label
+																								class="control-label">System</label>
+																							<input
+																								formControlName="medication_dispense_medication_system"
+																								type="text"
+																								class="form-control">
+																						</div>
+																					</div>
+																					<div class="col-sm-6">
+																						<div class="form-group">
+																							<label
+																								class="control-label">Code</label>
+																							<input
+																								formControlName="medication_dispense_medication_code"
+																								type="text"
+																								class="form-control">
+																						</div>
+																					</div>
+																				</div>
+																				<div class="card-title border-bottom">
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="card-title border-bottom"></div>
+															</div>
+														</div>
+
+														<div class="card">
+															<div class="card-body">
+																<div
+																	class="d-flex justify-content-between align-items-center flex-wrap grid-margin border-bottom">
+																	<h6 class="card-title text-primary">Dosage
+																		Instructions</h6>
+																	<button type="button"
+																		class="btn btn-primary btn-icon btn-xs"
+																		(click)="addDosageDetails()"><i
+																			class="feather icon-plus"></i></button>
+																</div>
+																<div class="row" formArrayName="dosageDetails">
+																	<div class="col-md-12 mt-2"
+																		*ngFor="let dosageDetail of dosageDetails.controls; let i=index">
+																		<div class="card" [formGroupName]="i">
+																			<div class="card-body">
+																				<div
+																					class="d-flex justify-content-between align-items-center flex-wrap grid-margin border-bottom">
+																					<h6 class="card-title text-primary">
+																						Dosage {{i+1}}</h6>
+																					<label
+																						(click)="removeDosageDetails(i)"
+																						*ngIf="dosageDetails.controls.length>1"><i
+																							class="feather icon-x-circle"></i></label>
+																				</div>
+																				<div class="row">
+																					<div class="col-sm-6">
+																						<h6
+																							class="card-title border-bottom text-primary">
+																							Dose Quantity
+																						</h6>
+																						<div class="col-sm-12">
+																							<div class="row">
+																								<div class="col-sm-6">
+																									<div
+																										class="form-group">
+																										<label
+																											class="control-label">value</label>
+																										<input
+																											class="form-control"
+																											formControlName="dosage_instructions_dose_quantity_value">
+																									</div>
+																								</div>
+																								<div class="col-sm-6">
+																									<div
+																										class="form-group">
+																										<label
+																											class="control-label">Unit</label>
+																										<input
+																											class="form-control"
+																											formControlName="dosage_instructions_dose_quantity_unit">
+																									</div>
+																								</div>
+																								<div class="col-sm-12">
+																									<div
+																										class="form-group">
+																										<label
+																											class="control-label">asNeeded
+																											Boolean</label>
+																										<input
+																											class="form-control"
+																											formControlName="dosage_instructions_asNeededBoolean">
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="col-sm-6">
+																						<h6
+																							class="card-title border-bottom text-primary">
+																							Timing Details
+																						</h6>
+																						<div class="row">
+																							<div class="col-sm-4">
+																								<div class="form-group">
+																									<label
+																										class="control-label">frequency</label>
+																									<input
+																										class="form-control"
+																										formControlName="dosage_instructions_timing_frequency">
+																								</div>
+																							</div>
+																							<div class="col-sm-4">
+																								<div class="form-group">
+																									<label
+																										class="control-label">period</label>
+																									<input
+																										class="form-control"
+																										formControlName="dosage_instructions_timing_period">
+																								</div>
+																							</div>
+																							<div class="col-sm-4">
+																								<div class="form-group">
+																									<label
+																										class="control-label">period
+																										Unit</label>
+																									<input
+																										class="form-control"
+																										formControlName="dosage_instructions_timing_periodUnit">
+																								</div>
+																							</div>
+																							<div class="col-sm-4">
+																								<div class="form-group">
+																									<label
+																										class="control-label">count</label>
+																									<input
+																										class="form-control"
+																										formControlName="dosage_instructions_timing_count">
+																								</div>
+																							</div>
+																							<div class="col-sm-4">
+																								<div class="form-group">
+																									<label
+																										class="control-label">Time
+																										1 Of Day
+																									</label>
+																									<input
+																										class="form-control"
+																										formControlName="dosage_instructions_timing_timeOfDay_1">
+																								</div>
+																							</div>
+																							<div class="col-sm-4">
+																								<div class="form-group">
+																									<label
+																										class="control-label">Time
+																										2 Of Day
+																									</label>
+																									<input
+																										class="form-control"
+																										formControlName="dosage_instructions_timing__timeOfDay_2">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="card-title border-bottom"></div>
+															</div>
+														</div>
+
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="card-title border-bottom"></div>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="col-md-1">&nbsp;</div> -->
+				</div>
+
+
+			</form>
+		</ng-template>
+	</ngb-panel>
+</ngb-accordion>

@@ -86,29 +86,29 @@ export class MedicationDispense {
     dispenseLineid: string = null;
     originalFillDate: string = null;
     dispenseStartDate: string = null;
-    dispenseRefillNumber: string = null;
-    refillsRemaining: string = null;
+    dispenseRefillNumber: number = null;
+    refillsRemaining: number = null;
     refillMessage: string = null;
     orderType: string = null;
-    RXSyncSeq: string = null;
+    RXSyncSeq: number = null;
 
     //authorizingPrescription = new authorizingPrescription();
     medicationCodeableConcept: Array<medicationCodeableConcept> = [new medicationCodeableConcept()];
     substitution = new substitution();
-    daysSupply: string = null;
-    quantity: string = null;
+    daysSupply: number = null;
+    quantity: number = null;
 
     sig: string = null;
     warning = new Array();
     //extension = new extension();
-    dosageInstruction: Array<dosageInstruction> = [new dosageInstruction(),new dosageInstruction()];
+    dosageInstruction: Array<dosageInstruction> = [];
 }
 
 export class authorizingPrescription {
     value: string = null;
 }
 export class substitution {
-    wasSubstituted: string = 'false';
+    wasSubstituted: boolean = false;
 }
 // export class extension {
 //     dateNeedBy: string = null;
@@ -124,7 +124,7 @@ export class substitution {
 // }
 export class dosageInstruction {
     //text: string = null;
-    asNeededBoolean: string = 'false';
+    asNeededBoolean: boolean = false;
     doseQuantity = new doseQuantity();
     //additionalInstruction: Array<additionalInstruction> = [new additionalInstruction()];
     timing: Array<timing> = [new timing()];
@@ -134,12 +134,12 @@ export class additionalInstruction {
 }
 export class doseQuantity {
     unit: string = null;
-    value: string = null;
+    value: number = null;
 }
 export class timing{
-    count: string = null;
-    frequency: string = null;
-    period: string = null;
+    count: number = null;
+    frequency: number = null;
+    period: number = null;
     periodUnit: string = null;
     timeOfDay = new Array();
 }
