@@ -14,8 +14,8 @@ export class MasterServicesService {
   };
 
   generatedToken:any;
-  //IoTAPI: string = environment.API_URL;
-  IoTAPI: string ='';
+  IoTAPI: string = environment.API_URL;
+  //IoTAPI: string ='';
   constructor(private _http: HttpClient) { }
 
   getToken(){
@@ -34,6 +34,7 @@ export class MasterServicesService {
 
 
   postPatient(request, token) {
+    console.log("post method")
     console.log(token)
     const HeaderData = { headers: new HttpHeaders({ 'Content-Type': 'application/json','Authorization':token }) };
     console.log(HeaderData.headers)

@@ -17,7 +17,7 @@ export class patient {
     id:string=null;
     name = new Name();
     //telecom: Array<telecom> = [new telecom(), new telecom(), new telecom()];
-    telecom: Array<telecom> = [new telecom()];
+    telecom: Array<telecom> = [];
     address = new Address();
     birthdate: string = null;
 }
@@ -68,12 +68,12 @@ export class MedicationRequest {
     authorOn: string = null;
     Requestor = new Requestor();
     validityPeriod = new validityPeriod();
-    medicationCodeableConcept: Array<medicationCodeableConcept> = [new medicationCodeableConcept()];
+    medicationCodeableConcept: Array<medicationCodeableConcept> = [];
 }
 export class Requestor {
     name = new Name();
     address = new Address();
-    telecom: Array<telecom> = [new telecom()];
+    telecom: Array<telecom> = [];
 }
 export class validityPeriod {
     end: string = null;
@@ -93,7 +93,7 @@ export class MedicationDispense {
     RXSyncSeq: number = null;
 
     //authorizingPrescription = new authorizingPrescription();
-    medicationCodeableConcept: Array<medicationCodeableConcept> = [new medicationCodeableConcept()];
+    medicationCodeableConcept: Array<medicationCodeableConcept> = [];
     substitution = new substitution();
     daysSupply: number = null;
     quantity: number = null;
@@ -127,7 +127,7 @@ export class dosageInstruction {
     asNeededBoolean: boolean = false;
     doseQuantity = new doseQuantity();
     //additionalInstruction: Array<additionalInstruction> = [new additionalInstruction()];
-    timing: Array<timing> = [new timing()];
+    timing: Array<timing> = [];
 }
 export class additionalInstruction {
     text: string = null;
